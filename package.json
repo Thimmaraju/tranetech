@@ -1,0 +1,21 @@
+{
+  "name": "corpcypress",
+  "version": "1.0.0",
+  "description": "Project description",
+  "main": "index.js",
+  "scripts": {
+    "run": "npx cypress run",
+    "open": "npx cypress open"
+  },
+  "keywords": [
+    "Cypress",
+    "Mocha",
+    "Chai"
+  ],
+  "author": "Raju",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "11.0.0",
+    "cypress-xpath": "^2.0.1"
+  }
+}
