@@ -1,6 +1,6 @@
 
 import data from "../fixtures/logincreds.json"
-import login from "../pageobjects/Login/login.po"
+
 
 describe('Verify Login functionality', () => {
 
@@ -30,12 +30,7 @@ describe('Verify Login functionality', () => {
   it.only('Verify Login with Valid credentials', () => {
   
  
-
-     cy.get(login.entercreds('username')).type(data.username)
-
-     cy.get(login.entercreds('password')).type(data.password)
-
-     cy.get('button[type="submit"]').click()
+     cy.login("Admin", "admin123")
 
      //assertions
 
@@ -92,9 +87,3 @@ describe('Verify Login functionality', () => {
 
 })
 
-
-describe("bfwnb", ()=>{
-
-
-
-})

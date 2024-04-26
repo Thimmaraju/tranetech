@@ -23,3 +23,34 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+require('@4tw/cypress-drag-drop')
+import 'cypress-file-upload';
+require('cypress-downloadfile/lib/downloadFileCommand')
+
+
+Cypress.Commands.add('login', () => { 
+    
+     cy.get('input[name="username"]').type(Cypress.env('username'))
+
+     cy.get('input[name="password"]').type(Cypress.env('password'))
+
+     cy.get('button[type="submit"]').click()
+ })
+
+ Cypress.Commands.add('addjobtile', (title, description) => { 
+
+    cy.contains('Admin').click()
+    cy.contains('Job').click()
+    cy.contains('Job Titles').click()
+    cy.get('button[class="oxd-button oxd-button--medium oxd-button--secondary"]').click()
+    cy.get('input[class="oxd-input oxd-input--active"]').last().type(title)
+    cy.get('textarea[placeholder="Type description here"]').type(description)
+    cy.get('button[type="submit"]').click()
+
+ })
+
+ 
+
+
+

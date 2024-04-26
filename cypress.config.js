@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
 
 module.exports = defineConfig({
   e2e: {
@@ -11,8 +12,9 @@ module.exports = defineConfig({
     baseUrl: 'https://opensource-demo.orangehrmlive.com',
     viewportWidth: 1920,
     viewportHeight: 1080,
+    chromeWebSecurity: false,
     retries: {
-      openMode:4,
+      openMode:1,
       runMode:1
     },
     //defaultCommandTimeout: 20000,
@@ -25,9 +27,11 @@ module.exports = defineConfig({
 
     },
     video:true,
+    experimentalSessionAndOrigin:true,
   
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      on('task', {downloadFile})
     },
   },
 });

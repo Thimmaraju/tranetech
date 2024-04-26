@@ -7,15 +7,6 @@ class loginPage{
         return 'img[alt="company-branding"]'
     }
 
-    // usernameInput(){
-
-    //     return 'input[name="username"]'
-    // }
-
-    // passwordInput(){
-
-    //     return 'input[name="password"]'
-    // }
 
 
      entercreds(inputfiled){
