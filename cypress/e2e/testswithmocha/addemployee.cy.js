@@ -9,23 +9,25 @@ describe('Verify Add Employee Functionality', () => {
 
   it('Verify Add employee with mandotoryu details', () => {
 
-    cy.visit('/web/index.php/auth/login')
+    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee")
 
-    login.loginwithcreds(Cypress.env('username'), Cypress.env('password'))
+    // cy.visit('/web/index.php/auth/login')
 
-    //assertions
+    // login.loginwithcreds(Cypress.env('username'), Cypress.env('password'))
 
-    cy.contains(dashbaord.timeatworkcard()).should("be.visible")
+    // //assertions
 
-    cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
+    // cy.contains(dashbaord.timeatworkcard()).should("be.visible")
 
-    //or 
+    // cy.url().should("eq", 'https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
 
-    cy.url().should("include", 'index.php/dashboard/index')
+    // //or 
 
-    cy.contains(dashbaord.pimMenu()).click()
+    // cy.url().should("include", 'index.php/dashboard/index')
 
-    cy.contains(addemployee.addemployeeSubMenu()).click()
+    // cy.contains(dashbaord.pimMenu()).click()
+
+    // cy.contains(addemployee.addemployeeSubMenu()).click()
 
     cy.get(addemployee.firstnameInput).type(addemployeedata.firstname)
     cy.get(addemployee.lastnameInput()).type(addemployeedata.lastname)

@@ -29,28 +29,37 @@ import 'cypress-file-upload';
 require('cypress-downloadfile/lib/downloadFileCommand')
 
 
-Cypress.Commands.add('login', () => { 
-    
-     cy.get('input[name="username"]').type(Cypress.env('username'))
+Cypress.Commands.add('login', () => {
 
-     cy.get('input[name="password"]').type(Cypress.env('password'))
+   cy.get('input[name="username"]').type(Cypress.env('username'))
 
-     cy.get('button[type="submit"]').click()
- })
+   cy.get('input[name="password"]').type(Cypress.env('password'))
 
- Cypress.Commands.add('addjobtile', (title, description) => { 
+   cy.get('button[type="submit"]').click()
+})
 
-    cy.contains('Admin').click()
-    cy.contains('Job').click()
-    cy.contains('Job Titles').click()
-    cy.get('button[class="oxd-button oxd-button--medium oxd-button--secondary"]').click()
-    cy.get('input[class="oxd-input oxd-input--active"]').last().type(title)
-    cy.get('textarea[placeholder="Type description here"]').type(description)
-    cy.get('button[type="submit"]').click()
+Cypress.Commands.add('addjobtile', (title, description) => {
 
- })
+   cy.contains('Admin').click()
+   cy.contains('Job').click()
+   cy.contains('Job Titles').click()
+   cy.get('button[class="oxd-button oxd-button--medium oxd-button--secondary"]').click()
+   cy.get('input[class="oxd-input oxd-input--active"]').last().type(title)
+   cy.get('textarea[placeholder="Type description here"]').type(description)
+   cy.get('button[type="submit"]').click()
 
- 
+})
+
+Cypress.Commands.add('addEmpoyee', (firstname, lastname) => {
+
+   cy.get('input[name="firstName"]').type(firstname)
+   cy.get('input[name="lastName"]').type(lastname)
+   cy.get('button[type="submit"]').click()
+   cy.contains('Successfully Saved').should('be.visible')
+
+})
+
+
 
 
 
