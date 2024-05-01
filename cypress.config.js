@@ -6,7 +6,7 @@ module.exports = defineConfig({
   e2e: {
 
     //specPattern: "cypress/e2e/**/*.trane.js",
-    specPattern: "**/*.feature",
+   // specPattern: "**/*.feature",
     excludeSpecPattern:"",
     screenshotsFolder : "cypress/raju",
     videosFolder:"cypress/recordedvideos",
